@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     // Code below executes when the app's first view loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("The View Loaded!")
+        
     }
 
 
@@ -37,12 +37,21 @@ class ViewController: UIViewController {
                         "You Are Tremendous!",
                         "You are so cool!"]
         
-        messageLabel.text = messages[index]
+        var newIndex = -1
         
-        if index == messages.count - 1 {
-            index = 0
-        } else {
-            index = index + 1
+        repeat {
+            newIndex = Int.random(in: 0..<messages.count)
+        } while index == newIndex
+        
+        index = newIndex
+        messageLabel.text = messages[index]
+
+//        messageLabel.text = messages[index]
+//
+//        if index == messages.count - 1 {
+//            index = 0
+//        } else {
+//            index = index + 1
         
         
         
